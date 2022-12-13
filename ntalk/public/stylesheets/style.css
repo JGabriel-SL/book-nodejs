@@ -1,8 +1,131 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 1.5rem "Quicksand", Helvetica, Arial, sans-serif;
+  background-color: #0288bd;
+  color: #fff;
 }
 
 a {
   color: #00B7FF;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background-color: #014560b8;
+
+  padding: 1.5rem 2.5rem;
+  margin-bottom: 50px;
+  border-radius: 3px;
+  /* position: relative;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, 10%); */
+}
+
+@media (max-width: 600px)
+{
+  .login-card {
+    width: 80%;
+  }
+
+  .login-card input {
+    width: 80%;
+  }
+}
+
+.login-card input {
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0;
+  margin-bottom: 10px;
+  outline: none;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+.button-align {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.login-card button {
+  align-self: center;
+  background-color: #73ac73;
+  border: none;
+  border-radius: 5px;
+
+  margin-top: 10px;
+  padding: 10px 20px;
+
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+  
+}
+
+.login-card button:hover {
+  background-color: #73ac73c1;
+}
+
+/* contacts css */
+
+.contacts-form form input {
+  padding: 10px 5px;
+}
+
+
+.contacts-form form button {
+  background-color: #73ac73;
+  border: none;
+  border-radius: 5px;
+
+  padding: 10px 20px;
+
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.contacts-form form button:hover {
+  background-color: #73ac73c1;
+}
+
+
+.contacts-table {
+  font-size: 20px;
+}
+.contacts-table thead th {
+  padding: 5px 10px;
+}
+
+.contacts-table tbody td {
+  padding: 5px 10px;
+}
+
+.contacts-table tbody td a {
+  text-decoration: none;
+  color: #73ac73;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+
+footer {
+  font-size: 1rem;
+  text-align: center;
 }

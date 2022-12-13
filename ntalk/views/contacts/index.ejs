@@ -3,12 +3,18 @@
         <h2>Ntalk - Agenda de contatos</h2>
     </header>
     <section>
-        <form action="/contacts" method="post">
-            <input type="text" name="contact[name]" placeholder="Nome">
-            <input type="text" name="contact[email]" placeholder="Email">
-            <button type="submit">Cadastrar</button>
-        </form>
-        <table border="1">
+        <p>Cadastre um novo contato: </p>
+        <div class="contacts-form">
+            <form action="/contacts" method="post">
+                <input type="text" name="contact[name]" placeholder="Nome">
+                <input type="text" name="contact[email]" placeholder="Email">
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+      
+        <h4>Sua lista de contatos:</h4>
+
+        <table border="2" class="contacts-table">
             <thead>
                 <tr>
                     <th>Nome</th>
