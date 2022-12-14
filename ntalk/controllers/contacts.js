@@ -19,7 +19,7 @@ module.exports = (app) => {
         const params = {contact: contact, id: id};
         res.render('contacts/show', params)
       },
-      edit: (req, res) => {
+      edit: (req, res) => {D
         const id = req.params.id;
         const user = req.session.user;
         const contact = user.contacts[id];

@@ -1,12 +1,18 @@
 const express = require('express');
+const app = express();
+const http = require('http');
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server);
+
+const error = require('./middleware/error');
 const load = require('express-load');
+
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const methodOverride = require('method-override')
-const error = require('./middleware/error');
 
-const app = express();
 
 // configuração para utilizar ejs
 app.set('views', __dirname + '/views');
@@ -36,18 +42,26 @@ app.use(methodOverride('_method'))
 app.use(express.static(__dirname + '/public'));
 
 
-// config routes to error pages.
 
 
 // config. para carregar os arquivos as respectivas pastas
 load('models')
-  .then('controllers')
-  .then('routes')
-  .into(app);
+.then('controllers')
+.then('routes')
+.into(app);
 
+// config routes to error pages.
 app.use(error.notFound);
 app.use(error.serverError);
 
-app.listen(3000, () => {
+io.sockets.on('connection', function (client) {
+  client.on('send-server', function (data) {
+  var msg = "<b>"+data.name+":</b> "+data.msg+"<br>";
+  client.emit('send-client', msg);
+  client.broadcast.emit('send-client', msg);
+  });
+});
+
+server.listen(3000, () => {
   console.log('Ntalk está funcionando corretamente!');
 })
