@@ -13,16 +13,27 @@
         document.getElementById('msg').value = '';
         console.log(name);
     };
+
+    document.addEventListener("keypress", function(e) {
+        if(e.key === 'Enter') {
+            const btn = document.querySelector("#btn-send");
+            btn.click();
+        }
+    });
 </script>
 
-<header>
+<header class="header text-center">
     <h2>Ntalk- Chat</h2>
 </header>
-<section>
-    <pre id="chat"></pre>
-    <input type="hidden" name="name" id="name" value="<%- user.name %>">
-    <input type="text" name="msg" id="msg" placeholder="mensagem">
-    <button onclick="send()">Enviar</button>
+<section class="chat-container">
+    <div class="chat-display">
+        <pre class="chat-messages" id="chat"></pre>
+    </div>
+    <div class="chat-actions">
+        <input type="hidden" name="name" id="name" value="<%- user.name %>">
+        <input type="text" name="msg" id="msg" placeholder="Digite sua mensagem">
+        <button id="btn-send" onclick="send()">Enviar</button>
+        <a href="/logout">Sair</a>
+    </div>
 </section>
-<% include ../exit %>
 <% include ../footer %>

@@ -1,3 +1,8 @@
+* {
+  padding: 0 0;
+  margin: 0 0;
+}
+
 body {
   padding: 50px;
   font: 1.5rem "Quicksand", Helvetica, Arial, sans-serif;
@@ -49,15 +54,13 @@ a {
   margin-bottom: 10px;
   outline: none;
   border-radius: 3px;
-  font-size: 1rem;
+  font-size: 14px;
 }
 
 .button-align {
   display: flex;
   justify-content: center;
 }
-
-
 
 .login-card button {
   align-self: center;
@@ -81,6 +84,35 @@ a {
 
 /* contacts css */
 
+.text-center {
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.header h2 {
+  margin-bottom: 20px;
+}
+
+.header p {
+  font-size: 20px;
+}
+
+.container-contacts {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.contacts-form {
+  margin-bottom: 40px;
+}
+
 .contacts-form form input {
   padding: 10px 5px;
 }
@@ -103,7 +135,6 @@ a {
   background-color: #73ac73c1;
 }
 
-
 .contacts-table {
   font-size: 20px;
 }
@@ -123,9 +154,214 @@ a {
   cursor: pointer;
 }
 
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.card {
+  background-color: #00b7ffbc;
+  border-radius: 10px;
+  width: 200px ;
+  padding: 10px 30px;
+  margin: 20px;
+}
+
+.card p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.card .btn-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card a {
+  text-decoration: none;
+  background-color: #73ac73;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.contact-card-show {
+  display: flex;
+}
+
+.contact-card-show img {
+  margin-right: 10px;
+}
+
+.contact-show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  background-color: #014560b8;
+  font-size: 14px;
+
+  padding: 1.5rem 2.5rem;
+  margin-bottom: 50px;
+  border-radius: 3px;
+}
+
+.contact-show p{
+  margin-bottom: 10px;
+  
+}
+
+
+.contact-show button {
+  background-color: #b40909;
+  border: none;
+  border-radius: 5px;
+
+  padding: 10px 10px;
+  font-size: 12px;
+  margin: 0 5px;
+
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+}
+
+.contact-show a {
+  color: #fff;
+  background-color: #73ac73;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 0px 20px;
+  height: 100%;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex div a {
+  display: flex;
+  align-items: center;
+}
+
+.flex div a img {
+  margin-right: 5px;
+}
+
+.flex div button {
+  display: flex;
+  align-items: center;
+}
+
+.flex div button img {
+  margin-right: 5px;
+}
+
+.container-contacts-edit {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+
+}
+
+.container-contacts-edit input {
+    padding: 10px 5px;
+    margin-right: 10px;
+}
+
+.container-contacts-edit button {
+  background-color: #73ac73;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 11px;
+  cursor: pointer;
+}
+
+
+/* CHAT */
+
+.chat-container {
+  margin: 0 auto;
+  width: 400px;
+  margin-bottom: 50px;
+}
+
+.chat-display {
+  background-color: #fff;
+  border-radius: 10px;
+  color: #000;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 30vh;
+  font-size: 14px;
+  overflow-x: scroll;
+}
+
+.chat-messages {
+  padding: 10px;
+}
+
+.chat-display-message {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.chat-actions {
+  align-self: flex-start;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+}
+
+.chat-actions input {
+  flex-grow: 1;
+  height: 20px;
+  border: none;
+  border-radius: 5px 0px 0px 5px;
+  padding: 5px 10px;
+  outline: none;
+  
+}
+
+.chat-actions button {
+  background-color: #73ac73;
+  border: none;
+  border-radius: 0px;
+  color: #fff;
+  padding: 8px;
+  cursor: pointer;
+  height: 100%;
+}
+
+.chat-actions a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background-color: #b40909;
+  border-radius: 0px 5px 5px 0px;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 0px 8px;
+  height: 100%;
+}
 
 footer {
   font-size: 1rem;
   text-align: center;
+}
+
+.logout a {
+  color: #fff;
+  font-size: 15px;
 }

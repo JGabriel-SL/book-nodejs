@@ -1,41 +1,63 @@
 <% include ../header %>
-    <header class="">
+    <header class="text-center header">
         <h2>Ntalk - Agenda de contatos</h2>
+        <p>Bem-vindo <b> <%- user.name %></b>!</p>
     </header>
-    <section>
-        <p>Cadastre um novo contato: </p>
-        <div class="contacts-form">
-            <form action="/contacts" method="post">
-                <input type="text" name="contact[name]" placeholder="Nome">
-                <input type="text" name="contact[email]" placeholder="Email">
-                <button type="submit">Cadastrar</button>
-            </form>
-        </div>
-      
-        <h4>Sua lista de contatos:</h4>
+    <div class="container-contacts flex-column">
+        <section>
+            <div class="contacts-form">
+                <p>Cadastre um novo contato: </p>
+                <form action="/contacts" method="post">
+                    <input type="text" name="contact[name]" placeholder="Nome">
+                    <input type="text" name="contact[email]" placeholder="Email">
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </section>
 
-        <table border="2" class="contacts-table">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Ação</th>
-                </tr>
-            </thead>
-            <tbody>
+        <section>
+            <h4>Sua lista de contatos:</h4>
+            
+            <div class="cards">
                 <% contacts.forEach((contact, index) => { %>
-                <tr>
-                    <td><%- contact.name %></td>
-                    <td><%- contact.email %></td>
-                    <td>
+                <div class="card">
+                    <p class="contact-card-show" style="align-items: center;">
+                        <img src="/images/contato.png" alt="email" height="20">
+                        <span><%- contact.name %></span>
+                    </p>
+                    <p class="contact-card-show" style="overflow: hidden;">
+                        <img src="/images/email.png" alt="email" height="20">
+                        <span><%- contact.email %></span>
+                    </p>
+                    <div class="btn-actions">
                         <a href="/contacts/<%- index %>">Detalhes</a>
                         <a href="/chat/<%- contact.email %>">Conversar</a>
-                    </td>
-                </tr>
+                    </div>
+                </div>
                 <% }); %>
-            </tbody>
-        </table>
-        <p>Bem-vindo <%- user.name %></p>
-    </section>
+            </div>
+            <!-- <table border="2" class="contacts-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% contacts.forEach((contact, index) => { %>
+                    <tr>
+                        <td><%- contact.name %></td>
+                        <td><%- contact.email %></td>
+                        <td>
+                            <a href="/contacts/<%- index %>">Detalhes</a>
+                            <a href="/chat/<%- contact.email %>">Conversar</a>
+                        </td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table> -->
+        </section>
+    </div>
     <% include ../exit %>
 <% include ../footer %>

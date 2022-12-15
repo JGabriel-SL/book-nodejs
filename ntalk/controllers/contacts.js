@@ -10,7 +10,6 @@ module.exports = (app) => {
         const contact = req.body.contact;
         const user = req.session.user;
         user.contacts.push(contact);
-        console.log(contact)
         res.redirect('/contacts');
       },
       show: (req, res) => {
@@ -19,7 +18,7 @@ module.exports = (app) => {
         const params = {contact: contact, id: id};
         res.render('contacts/show', params)
       },
-      edit: (req, res) => {D
+      edit: (req, res) => {
         const id = req.params.id;
         const user = req.session.user;
         const contact = user.contacts[id];

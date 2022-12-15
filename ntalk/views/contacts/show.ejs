@@ -1,17 +1,39 @@
 <% include ../header %>
-<header>
+<header class="header text-center">
     <h2>Ntalk - Dados do contato</h2>
 </header>
 <section>
-    <form action="/contacts/<%- id %>/delete?_method=DELETE" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <p><label>Nome: </label> <%- contact.name %></p>
-        <p><label>E-mail: </label> <%- contact.email %></p>
-        <p>
-            <button type="submit">Excluir</button>
-            <a href="/contacts/<%- id %>/edit">Editar</a>
-        </p>
-    </form>
+    <div class="container-contacts">
+        <div class="contact-show">
+            <form action="/contacts/<%- id %>/delete?_method=DELETE" method="post">
+                <input type="hidden" name="_method" value="delete">
+                
+                <p class="contact-card-show">
+                    <img src="/images/contato.png" alt="contato" >
+                    <span><%- contact.name %></span>
+                </p>
+                <p class="contact-card-show">
+                    <img src="/images/email.png" alt="email" >
+                    <span><%- contact.email %></span>
+                </p>
+                <div class="flex">
+                    <div>
+                        <a href="/contacts/<%- id %>/edit">
+                            <img src="/images/editar.png" alt="contato" width="15" >
+                            <span>Editar</span>
+                        </a>
+                    </div>
+                    <div>
+                        <button type="submit">
+                            <img src="/images/editar.png" alt="contato" width="15" >
+                            <span>Excluir</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  
 </section>
 
 <% include ../exit %>
