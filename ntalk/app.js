@@ -46,21 +46,16 @@ app.use(express.static(__dirname + '/public'));
 
 // config. para carregar os arquivos as respectivas pastas
 load('models')
-.then('controllers')
-.then('routes')
-.into(app);
+  .then('controllers')
+  .then('routes')
+  .into(app);
+
+load('sockets')
+  .into(io);
 
 // config routes to error pages.
 app.use(error.notFound);
 app.use(error.serverError);
-
-io.sockets.on('connection', function (client) {
-  client.on('send-server', function (data) {
-    var msg = "<div class='chat-display-message'><b>"+data.name+":</b>"+data.msg+"</div>";
-    client.emit('send-client', msg);
-    client.broadcast.emit('send-client', msg);
-  });
-});
 
 server.listen(3000, () => {
   console.log('Ntalk está funcionando corretamente!');
